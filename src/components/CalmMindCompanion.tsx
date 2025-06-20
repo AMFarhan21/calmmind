@@ -10,6 +10,26 @@ import { Label } from './ui/label';
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { deleteCompanion } from '@/actions/companion.action';
+import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious,
+} from "@/components/ui/pagination"
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 type CalmCompanion = {
     id: string,
@@ -22,15 +42,18 @@ type CalmCompanion = {
 }
 interface CalmCompanionsProps {
     calmCompanions: CalmCompanion[],
-    userId?: string
+    userId?: string,
+    title: string
 }
 
 
 
-const CalmMindCompanion = ({ calmCompanions, userId }: CalmCompanionsProps) => {
+const CalmMindCompanion = ({ title, calmCompanions, userId }: CalmCompanionsProps) => {
     // QUERY AND DATA
     const [searchQuery, setSearchQuery] = useState("")
     const [searchCategory, setSearchCategory] = useState("")
+    const [currentPage, setCurrentPage] = useState(1)
+
     const filteredCompanions = calmCompanions.filter((companion) => {
         return (
             (
@@ -51,13 +74,27 @@ const CalmMindCompanion = ({ calmCompanions, userId }: CalmCompanionsProps) => {
         }
     }
 
+    const itemPerPage = 2
+    const totalPage = Math.ceil(filteredCompanions.length / itemPerPage)
+    const startIndex = (currentPage - 1) * itemPerPage
+    const currentCompanions = filteredCompanions.slice(startIndex, startIndex + itemPerPage)
+    const pageNumber = Array.from({ length: totalPage }, (_, i) => i + 1)
+
 
     return (
         <div className='space-y-2'>
-            <h2 className="text-4xl font-bold tracking-tight font-mono">Calm Mind Companions</h2>
-            <div className='flex gap-2'>
-                <Input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder='Search companion' className='w-[50%]' />
-                <SelectionCategory searchCategory={searchCategory} setSearchCategory={setSearchCategory} />
+            <h2 className="text-4xl font-bold tracking-tight font-mono">{title}</h2>
+            <div className='flex flex-wrap md:flex-nowrap gap-2 '>
+                <Input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder='Search companion' className='sm:w-[50%]' />
+                <SelectionCategory searchCategory={searchCategory} setSearchCategory={setSearchCategory} setCurrentPage={setCurrentPage} />
+                <Link href={"/companions/newCalmCompanion"} className=''>
+                    <Button variant={'default'} className="z-50 font-semibold text-background hidden sm:flex text-base">
+                        ➕ Add New Companion
+                    </Button>
+                    <Button variant={'default'} className="z-50 font-semibold text-background flex sm:hidden text-base rounded-lg aspect-square mr-2">
+                        ➕ Add
+                    </Button>
+                </Link>
             </div>
             {
                 searchCategory && (
@@ -69,7 +106,7 @@ const CalmMindCompanion = ({ calmCompanions, userId }: CalmCompanionsProps) => {
             }
             <div className="mt-4 space-y-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 min-w-full">
                 {
-                    filteredCompanions.map((companion) => {
+                    currentCompanions.map((companion) => {
                         const IconComponent = categoriesIcon[companion.category as keyof typeof categoriesIcon];
 
                         return (
@@ -77,7 +114,7 @@ const CalmMindCompanion = ({ calmCompanions, userId }: CalmCompanionsProps) => {
                                 <Card
                                     key={companion.id}
                                     className={`flex flex-col sm:flex-row sm:items-center shadow-none overflow-hidden rounded-md hover:bg-foreground/4 min-w-full`}
-                                    style={{ borderColor: getCategoriesColor(companion.category) }}
+                                // style={{ borderColor: getCategoriesColor(companion.category) }}
                                 >
                                     <CardContent className="px-4 sm:px-6 py-0 flex flex-col min-w-full h-full">
                                         <div className="flex items-center gap-2 justify-between">
@@ -92,9 +129,31 @@ const CalmMindCompanion = ({ calmCompanions, userId }: CalmCompanionsProps) => {
                                             </div>
                                             {
                                                 companion.user_id === userId && (
-                                                    <div className='border-1 border-red-500 bg-background rounded-sm p-1' onClick={() => handleDeleteCompanion(companion.id)}>
-                                                        <Trash className='p-1' style={{color: "red"}}  />
-                                                    </div>
+                                                    <AlertDialog>
+                                                        <AlertDialogTrigger asChild>
+                                                            <div className='border-1 border-red-500 bg-background rounded-sm p-1'>
+                                                                <Trash className='p-1' style={{ color: "red" }} />
+                                                            </div>
+                                                        </AlertDialogTrigger>
+                                                        <AlertDialogContent>
+                                                            <AlertDialogHeader>
+                                                                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                                                                <AlertDialogDescription>
+                                                                    This action cannot be undone. This will permanently delete your
+                                                                    companion.
+                                                                </AlertDialogDescription>
+                                                            </AlertDialogHeader>
+                                                            <AlertDialogFooter>
+                                                                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                                                <AlertDialogAction
+                                                                    onClick={() => { handleDeleteCompanion(companion.id) }}
+                                                                    className='bg-red-500'
+                                                                >
+                                                                    Continue
+                                                                </AlertDialogAction>
+                                                            </AlertDialogFooter>
+                                                        </AlertDialogContent>
+                                                    </AlertDialog>
                                                 )
                                             }
                                         </div>
@@ -123,15 +182,31 @@ const CalmMindCompanion = ({ calmCompanions, userId }: CalmCompanionsProps) => {
                             )
                         )
                     })}
+
             </div>
-            <Link href={"/companions/newCalmCompanion"} className=''>
-                <Button variant={'secondary'} className="z-50 font-semibold text-background hidden sm:flex fixed bottom-10 left-20 text-xl py-6">
-                    ➕ Create New Companion
-                </Button>
-                <Button variant={'secondary'} className="z-50 font-semibold text-background flex sm:hidden fixed bottom-10 right-10 text-lg rounded-full aspect-square w-16 h-16 ">
-                    ➕
-                </Button>
-            </Link>
+            <Pagination className='w-full'>
+                <PaginationContent>
+                    <PaginationItem onClick={() => setCurrentPage(currentPage - 1)}>
+                        <PaginationPrevious href="#" />
+                    </PaginationItem>
+                    {
+                        pageNumber.map((page) => (
+                            <PaginationItem key={page} onClick={(e) => {
+                                e.preventDefault()
+                                setCurrentPage(page)
+                            }}>
+                                <PaginationLink href="#" isActive={currentPage === page}> {page} </PaginationLink>
+                            </PaginationItem>
+                        ))
+                    }
+                    <PaginationItem>
+                        <PaginationEllipsis />
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationNext href="#" onClick={() => setCurrentPage(currentPage + 1)}/>
+                    </PaginationItem>
+                </PaginationContent>
+            </Pagination>
         </div>
     )
 }

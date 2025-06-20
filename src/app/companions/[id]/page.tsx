@@ -18,7 +18,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <div className="flex items-center justify-center">
       <div className="w-full max-w-screen-lg mx-auto py-12 px-6">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap gap-2 justify-between items-center">
           <h2 className="text-xl leading-6 sm:text-2xl md:text-[40px] md:leading-[3.25rem] font-bold tracking-tight">
             {calmCompanion?.title}
           </h2>

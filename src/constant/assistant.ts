@@ -1,10 +1,12 @@
 const voices = {
-  male: { informal: "WTUK291rZZ9CLPCiFTfh", formal: "lnieQLGTodpbhjpZtg1k" },
-  female: { informal: "yM93hbw8Qtvdma2wCnJG", formal: "sarah" },
+  Marvin: "WTUK291rZZ9CLPCiFTfh", 
+  Leon: "lnieQLGTodpbhjpZtg1k",
+  Ella: "yM93hbw8Qtvdma2wCnJG", 
+  Adelaide: "sarah" 
 };
 
-export const configureAssistant = (voice: string, style: string) => {
-  const voiceId = voices[voice as keyof typeof voices][style as keyof (typeof voice)[keyof typeof voice]] || "sarah";
+export const configureAssistant = (companion_ai: string) => {
+  const voiceId = voices[companion_ai as keyof typeof voices] || "sarah";
 
   const vapiAssistant = {
     name: "Calm Mind Companion",
@@ -38,7 +40,7 @@ export const configureAssistant = (voice: string, style: string) => {
                     - Ask reflective or open-ended questions that invite the user to speak more.
                     - From time to time, check if the user is feeling okay or wants to continue.
                     - Avoid giving direct advice. Instead, help the user gain insight through gentle guidance.
-                    - Keep your speaking style {{ style }} - warm, supportive, and non-judgemental.
+                    - Keep your speaking - warm, supportive, and non-judgemental.
                     - Keep your responses short and suitable for a natural voice conversation.
                     - Do not include special characters in your response - this is a voice conversation.
                     - If the user tries to shift the conversation away from the topic: {{ description }} ({{ category }}), or from core mental health areas such as Anxiety, Depression, Relationships, Productivity, Work & Burnout, Sleep, Self-Esteem, Motivation, Anger, or Mindfulness — gently steer the conversation back to the original topic.

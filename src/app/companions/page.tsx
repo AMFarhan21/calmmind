@@ -15,7 +15,7 @@ const companions = async () => {
   if (!user) redirect("/sign-in")
   return (
     <div className='p-4'>
-      <CalmMindCompanion calmCompanions={calmMindCompanion} userId={userId!} />
+      <CalmMindCompanion title={"Your Calm Mind Companions"} calmCompanions={calmMindCompanion} userId={userId!} />
     </div>
   )
 }

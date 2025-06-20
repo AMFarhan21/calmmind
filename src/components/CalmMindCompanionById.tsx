@@ -12,11 +12,10 @@ import { createSessionHistory } from '@/actions/companion.action'
 
 type CalmCompanion = {
     id: string;
-    style: string | null;
+    companion_ai: string | null;
     title: string | null;
     description: string | null;
     category: string | null;
-    voice: string | null;
     duration: bigint | null;
     user_id: string | null;
     created_at: Date;
@@ -97,13 +96,13 @@ const CalmMindCompanionById = ({ calmCompanion, userImage, username }: CalmMindC
             variableValues: {
                 category: calmCompanion?.category,
                 description: calmCompanion?.description,
-                style: calmCompanion?.style
+                companion_ai: calmCompanion?.companion_ai
             },
             clientMessages: ['transcript']
         }
 
         // @ts-expect-error: assistantOverrides
-        vapi.start(configureAssistant(calmCompanion?.voice as string, calmCompanion?.style as string), assistantOverrides)
+        vapi.start(configureAssistant(calmCompanion?.companion_ai as string), assistantOverrides)
     }
 
     const handleDisconnect = async () => {
@@ -120,33 +119,72 @@ const CalmMindCompanionById = ({ calmCompanion, userImage, username }: CalmMindC
                 <div className="hidden md:flex border border-border/80 bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2 justify-center items-center">
                     {
                         callStatus === CallStatus.ACTIVE ? (
-                            <DotLottieReact
-                                src="https://lottie.host/1027f286-54d0-4ba1-a9cf-f15f58d5b785/ZLJIe9jlG8.lottie"
-                                loop={true}
-                                autoplay={true}
-                                className='p-10'
-                            />
+                            <div className='relative'>
+                                <Image src={`/images/${calmCompanion?.companion_ai === "Leon" ? "Leon" :
+                                    calmCompanion?.companion_ai === "Marvin" ? "Marvin" :
+                                        calmCompanion?.companion_ai === "Adelaide" ? "Adelaide" :
+                                            calmCompanion?.companion_ai === "Ella" && "Ella"
+                                    }.png`} alt='Companion Picture' width={100} height={100} className='aspect-square object-cover rounded-full'
+                                />
+                                <DotLottieReact
+                                    src="https://lottie.host/1027f286-54d0-4ba1-a9cf-f15f58d5b785/ZLJIe9jlG8.lottie"
+                                    loop
+                                    autoplay
+                                    className='z-50 absolute bottom-0 -mb-6'
+                                />
+
+                            </div>
 
                         ) : (
-                            <GetIcon size={100} style={{ color: getCategoriesColor(calmCompanion?.category as string) }} />
+                            <div className='items-center text-center'>
+                                <Image src={`/images/${calmCompanion?.companion_ai === "Leon" ? "Leon" :
+                                    calmCompanion?.companion_ai === "Marvin" ? "Marvin" :
+                                        calmCompanion?.companion_ai === "Adelaide" ? "Adelaide" :
+                                            calmCompanion?.companion_ai === "Ella" && "Ella"
+                                    }.png`} alt='Companion Picture' width={100} height={100} className='aspect-square object-cover rounded-full'
+                                />
+                                <div>
+                                    {calmCompanion?.companion_ai}
+                                </div>
+                            </div>
                         )
+                        // <GetIcon size={100} style={{ color: getCategoriesColor(calmCompanion?.category as string) }} />
                     }
                 </div>
                 <div className="bg-muted rounded-xl pt-6 md:pt-8 pb-6 px-6 col-span-1 md:col-span-2 lg:col-span-1">
                     <div className="md:hidden mb-6 aspect-video w-full bg-background border rounded-xl justify-center items-center flex">
                         {
                             callStatus === CallStatus.ACTIVE ? (
-                                <DotLottieReact
-                                    src="https://lottie.host/1027f286-54d0-4ba1-a9cf-f15f58d5b785/ZLJIe9jlG8.lottie"
-                                    loop
-                                    autoplay
-                                    className='p-10'
-                                />
+                                <div className='relative'>
+                                    <Image src={`/images/${calmCompanion?.companion_ai === "Leon" ? "Leon" :
+                                        calmCompanion?.companion_ai === "Marvin" ? "Marvin" :
+                                            calmCompanion?.companion_ai === "Adelaide" ? "Adelaide" :
+                                                calmCompanion?.companion_ai === "Ella" && "Ella"
+                                        }.png`} alt='Companion Picture' width={70} height={70} className='aspect-square object-cover rounded-full'
+                                    />
+                                    <DotLottieReact
+                                        src="https://lottie.host/1027f286-54d0-4ba1-a9cf-f15f58d5b785/ZLJIe9jlG8.lottie"
+                                        loop
+                                        autoplay
+                                        className='z-50 absolute bottom-0 -mb-4'
+                                    />
+
+                                </div>
 
                             ) : (
-
-                                <GetIcon size={60} style={{ color: getCategoriesColor(calmCompanion?.category as string) }} />
+                                <div className='items-center text-center'>
+                                    <Image src={`/images/${calmCompanion?.companion_ai === "Leon" ? "Leon" :
+                                        calmCompanion?.companion_ai === "Marvin" ? "Marvin" :
+                                            calmCompanion?.companion_ai === "Adelaide" ? "Adelaide" :
+                                                calmCompanion?.companion_ai === "Ella" && "Ella"
+                                        }.png`} alt='Companion Picture' width={70} height={70} className='aspect-square object-cover rounded-full'
+                                    />
+                                    <div>
+                                        {calmCompanion?.companion_ai}
+                                    </div>
+                                </div>
                             )
+                            // <GetIcon size={60} style={{ color: getCategoriesColor(calmCompanion?.category as string) }} />
                         }
                     </div>
                     <div className="text-2xl font-semibold tracking-tight px-auto mx-auto">

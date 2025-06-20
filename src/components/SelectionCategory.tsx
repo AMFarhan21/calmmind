@@ -10,10 +10,13 @@ import {
 } from "@/components/ui/select"
 import { Angry, BatteryPlus, Bed, Brain, Flame, Frown, Heart, HeartCrack, HeartPulse, ShieldCheck } from "lucide-react"
 
-export function SelectionCategory({ searchCategory, setSearchCategory }: { searchCategory: string, setSearchCategory: React.Dispatch<React.SetStateAction<string>> }) {
+export function SelectionCategory({ searchCategory, setSearchCategory, setCurrentPage }: { searchCategory: string, setSearchCategory: React.Dispatch<React.SetStateAction<string>>, setCurrentPage: React.Dispatch<React.SetStateAction<number>> }) {
   return (
-    <Select value={searchCategory} onValueChange={setSearchCategory}>
-      <SelectTrigger className="w-[50%]">
+    <Select value={searchCategory} onValueChange={(value) => {
+      setSearchCategory(value)
+      setCurrentPage(1)
+    }}>
+      <SelectTrigger className="md:w-[50%]">
         <SelectValue placeholder="Search category" />
       </SelectTrigger>
       <SelectContent>

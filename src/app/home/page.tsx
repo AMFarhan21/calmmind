@@ -19,7 +19,7 @@ const page = async() => {
     <div className="max-w-screen-xl mx-auto py-10 lg:py-16 px-2 xl:px-0 flex flex-col xl:flex-row items-start gap-4">
       <div className="xl:-ml-44">
       {/* @ts-expect-error: getAllUserCalmMindCompanions */}
-        <CalmMindCompanion calmCompanions={getAllUserCalmMindCompanions} userId={userId!} />
+        <CalmMindCompanion title={"All Calm Mind Companions"} calmCompanions={getAllUserCalmMindCompanions} userId={userId!} />
       </div>
       {/* @ts-expect-error: getAllUserSessionHistory */}
       <SessionHistory getUserCompanionSessionHistory={getUserCompanionSessionHistory} />

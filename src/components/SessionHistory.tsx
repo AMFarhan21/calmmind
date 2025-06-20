@@ -31,9 +31,9 @@ interface SessionHistoryProps {
 const SessionHistory = ({ getUserCompanionSessionHistory }: SessionHistoryProps) => {
     return (
         <div className="sticky top-47 w-full xl:w-auto md:mr-[-172px] space-y-4">
-            <div className="w-full items-center flex flex-col justify-center bg-muted-background rounded-2xl p-4">
+            <div className="w-full items-center flex flex-col justify-center border-1 border-primary rounded-2xl p-4">
                 <Image src={"/images/logo2.webp"} alt="go premium" width={120} height={120} className="-mt-10"  />
-                <Button variant={"secondary"} className="-mt-6 font-semibold"> Go Premium </Button>
+                <Button variant={"default"} className="-mt-6 font-semibold"> Go Premium </Button>
             </div>
             <div className="border-1 border-foreground rounded-2xl py-4 sm:px-4 max-w-screen xl:w-[520px]">
                 <h1 className="text-2xl font-bold font-mono w-full ml-2">Session History</h1>
