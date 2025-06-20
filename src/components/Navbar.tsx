@@ -16,7 +16,7 @@ const Navbar = () => {
                     <p className='font-bold font-mono sm:text-lg md:text-xl'>Calm Mind</p>
                 </Link>
                 <div className='hidden sm:flex flex-wrap sm:space-x-4 xl:space-x-6 text-sm sm:text-base items-center'>
-                    <Link href={"/"}>
+                    <Link href={"/home"}>
                         <Button variant={'ghost'}>
                             Home
                         </Button>

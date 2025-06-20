@@ -109,7 +109,7 @@ export const categories = [
 
 export const calmCompanions = [
   {
-    id: "$#kjfs;lkdj",
+    id: "0822604d-f329-4472-8ce1-976660101a97",
     title: "Reduce Anxiety with Mindfulness",
     description:
       "Learn how mindfulness can help reduce anxiety and improve your mental well-being.",
@@ -117,7 +117,7 @@ export const calmCompanions = [
     duration: 45,
   },
   {
-    id: "$1a2bsd3c4d",
+    id: "08f0e315-621e-4f9a-aa81-8cf53638bbb3",
     title: "Deep Breathing for Anxiety Relief",
     description:
       "Discover simple breathing techniques to help manage anxiety and promote relaxation.",
@@ -125,7 +125,7 @@ export const calmCompanions = [
     duration: 30,
   },
   {
-    id: "$5e6f7ggf8h",
+    id: "eb7a3c50-fcce-4a02-9c60-18008e8edd49",
     title: "Progressive Muscle Relaxation",
     description:
       "A guided session to relieve muscle tension and reduce anxiety symptoms.",
@@ -133,7 +133,7 @@ export const calmCompanions = [
     duration: 40,
   },
   {
-    id: "$9i0j1sdk2l",
+    id: "454f3265-f10d-4341-966a-e483bedd991d",
     title: "Managing Social Anxiety",
     description:
       "Strategies to cope with social situations that trigger anxiety.",
@@ -141,7 +141,7 @@ export const calmCompanions = [
     duration: 35,
   },
   {
-    id: "$m4n5fsdo6p7",
+    id: "88c1d206-ffda-4e88-8a99-143fb434e465",
     title: "Overcoming Panic Attacks",
     description:
       "Learn techniques to manage and minimize panic attack symptoms.",
@@ -150,7 +150,7 @@ export const calmCompanions = [
   },
 
   {
-    id: "$q8r9dahjs0t1",
+    id: "81324071-3005-4c07-afa7-08c5963f2f82",
     title: "Depression Self-Help Strategies",
     description:
       "Explore practical self-help methods for managing depressive symptoms.",
@@ -158,7 +158,7 @@ export const calmCompanions = [
     duration: 45,
   },
   {
-    id: "$u2v3wu54x5",
+    id: "e134843d-6849-4f52-bc15-aa1203b2c569",
     title: "Mindfulness for Depression",
     description:
       "Incorporate mindfulness practices to alleviate depressive thoughts and emotions.",
@@ -166,7 +166,7 @@ export const calmCompanions = [
     duration: 60,
   },
   {
-    id: "$y7z8axcv9b0",
+    id: "9a07fb67-d059-4dfe-92df-505151ec9780",
     title: "Cognitive Behavioral Therapy (CBT) Basics",
     description:
       "Understand the principles of CBT and how to apply them for depression management.",
@@ -175,7 +175,7 @@ export const calmCompanions = [
   },
 
   {
-    id: "$1c2d3e4568f",
+    id: "e73a1ae9-0285-4556-b752-105fe62707cd",
     title: "Improving Communication in Relationships",
     description:
       "Learn effective communication strategies to strengthen your relationships.",
@@ -183,7 +183,7 @@ export const calmCompanions = [
     duration: 60,
   },
   {
-    id: "$zdgvccvbcbv",
+    id: "d2f66ac9-de0d-42ee-9dc8-5ea12330a6fb",
     title: "Conflict Resolution Skills",
     description:
       "Master techniques for resolving disagreements constructively with loved ones.",
@@ -191,7 +191,7 @@ export const calmCompanions = [
     duration: 45,
   },
   {
-    id: "$9k0l1mu65eeg2n",
+    id: "fa41f980-c832-4fef-aa67-2db50d67775d",
     title: "Building Trust in Relationships",
     description:
       "Explore ways to nurture trust and deepen connections with your partner or friends.",
@@ -200,7 +200,7 @@ export const calmCompanions = [
   },
 
   {
-    id: "$op3qqqdwfdf4r5s",
+    id: "8f430df6-151c-48aa-8f14-d9dee9779eed",
     title: "Time Management Techniques",
     description:
       "Implement effective time management strategies to boost productivity.",
@@ -208,7 +208,7 @@ export const calmCompanions = [
     duration: 40,
   },
   {
-    id: "$t6u7vxczfvxcve8w9",
+    id: "a0be6edc-8da6-48c6-b1bf-b3d050df4753",
     title: "Prioritizing Tasks for Maximum Efficiency",
     description:
       "Discover methods to prioritize tasks and focus on what truly matters.",
@@ -216,7 +216,7 @@ export const calmCompanions = [
     duration: 35,
   },
   {
-    id: "$y0z1a2sdfgw5y53b3",
+    id: "5976c5e3-def6-46d2-944c-77e65375409f",
     title: "Avoiding Procrastination",
     description:
       "Learn strategies to overcome procrastination and stay focused on your goals.",
@@ -225,7 +225,7 @@ export const calmCompanions = [
   },
 
   {
-    id: "$4e5hsgfdxvcf6g7h",
+    id: "121dcfd7-a3db-45b5-95df-52bd4375f6f7",
     title: "Setting Boundaries at Work",
     description:
       "Establish healthy work-life boundaries to prevent burnout and maintain well-being.",
@@ -233,7 +233,7 @@ export const calmCompanions = [
     duration: 30,
   },
   {
-    id: "$8i9sdfgs53j0k1l",
+    id: "f6a7122f-5b51-48fb-a166-d9cdf1b2ae10",
     title: "Mindful Breaks for Stress Reduction",
     description:
       "Explore short, guided mindfulness exercises to manage work-related stress.",
@@ -241,7 +241,7 @@ export const calmCompanions = [
     duration: 25,
   },
   {
-    id: "$m2nsdcvt53o4p5",
+    id: "f6be93d4-ffc2-4c46-a401-f50bdd33df55",
     title: "Healthy Work Habits for Sustainability",
     description:
       "Develop long-term strategies to maintain a healthy work-life balance.",
@@ -250,7 +250,7 @@ export const calmCompanions = [
   },
 
   {
-    id: "$q8rzzzwg9s0t1",
+    id: "bd4250fb-9557-4b8e-ad68-083c73770232",
     title: "Improving Sleep Hygiene",
     description:
       "Create a sleep-conducive environment and routine for better rest.",
@@ -258,7 +258,7 @@ export const calmCompanions = [
     duration: 40,
   },
   {
-    id: "$u2v3vvbewwww4x5",
+    id: "d6612055-252a-4c55-bb20-99c48e9ec205",
     title: "Relaxation Techniques for Better Sleep",
     description:
       "Learn various relaxation methods to help fall asleep faster and stay asleep.",
@@ -266,7 +266,7 @@ export const calmCompanions = [
     duration: 35,
   },
   {
-    id: "$y7zxxverq8a9b0",
+    id: "7a76e4e8-8309-4784-ad16-c4944dadc36e",
     title: "Managing Insomnia Symptoms",
     description:
       "Address common causes of insomnia and practical solutions to improve sleep quality.",
@@ -275,7 +275,7 @@ export const calmCompanions = [
   },
 
   {
-    id: "$1c2fye4y322d3e4f",
+    id: "ad7162ee-c186-4aba-92a7-5d0f834df76f",
     title: "Boosting Self-Esteem Through Affirmations",
     description:
       "Discover the power of positive affirmations for enhancing self-esteem.",
@@ -283,7 +283,7 @@ export const calmCompanions = [
     duration: 30,
   },
   {
-    id: "$xxcvxdcvwww",
+    id: "4793d52a-be70-4943-ad08-55ee9b40793f",
     title: "Overcoming Negative Self-Talk",
     description:
       "Develop strategies to recognize and combat harmful inner dialogues.",
@@ -291,7 +291,7 @@ export const calmCompanions = [
     duration: 45,
   },
   {
-    id: "$9k0l1hhhgtrherm2n",
+    id: "abe581a1-b034-4893-9d98-3e61175697a5",
     title: "Building Confidence in Social Situations",
     description:
       "Learn techniques for boosting confidence when interacting with others.",
@@ -300,7 +300,7 @@ export const calmCompanions = [
   },
 
   {
-    id: "$op3qfgeeegert4r5s",
+    id: "1cfc3537-d383-4cdc-a5e2-4ab729f04934",
     title: "Motivational Strategies for Goal Achievement",
     description:
       "Explore methods to stay motivated and overcome obstacles in pursuit of your goals.",

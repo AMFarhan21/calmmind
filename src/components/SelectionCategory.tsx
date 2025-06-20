@@ -8,6 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { Angry, BatteryPlus, Bed, Brain, Flame, Frown, Heart, HeartCrack, HeartPulse, ShieldCheck } from "lucide-react"
 
 export function SelectionCategory({ searchCategory, setSearchCategory }: { searchCategory: string, setSearchCategory: React.Dispatch<React.SetStateAction<string>> }) {
   return (
@@ -17,16 +18,16 @@ export function SelectionCategory({ searchCategory, setSearchCategory }: { searc
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectItem value="Anxiety">Anxiety</SelectItem>
-          <SelectItem value="Depression">Depression</SelectItem>
-          <SelectItem value="Relationships">Relationships</SelectItem>
-          <SelectItem value="Productivity">Productivity</SelectItem>
-          <SelectItem value="Work & Burnout">Work & Burnout</SelectItem>
-          <SelectItem value="Sleep">Sleep</SelectItem>
-          <SelectItem value="Self-Esteem">Self-Esteem</SelectItem>
-          <SelectItem value="Motivation">Motivation</SelectItem>
-          <SelectItem value="Anger">Anger</SelectItem>
-          <SelectItem value="Mindfulness">Mindfulness</SelectItem>
+          <SelectItem style={{color: "#A8C5DA"}} value="Anxiety"><Frown style={{color: "#A8C5DA"}} /> Anxiety</SelectItem>
+          <SelectItem style={{color: "#6B6B9F"}} value="Depression"><HeartCrack style={{color: "#6B6B9F"}} /> Depression</SelectItem>
+          <SelectItem style={{color: "#F4A9A8"}} value="Relationships"><Heart style={{color: "#F4A9A8"}} /> Relationships</SelectItem>
+          <SelectItem style={{color: "#7FDBFF"}} value="Productivity"><BatteryPlus style={{color: "#7FDBFF"}} /> Productivity</SelectItem>
+          <SelectItem style={{color: "#C2B280"}} value="Work & Burnout"><Flame style={{color: "#C2B280"}} /> Work & Burnout</SelectItem>
+          <SelectItem style={{color: "#BFA2DB"}} value="Sleep"><Bed style={{color: "#BFA2DB"}} /> Sleep</SelectItem>
+          <SelectItem style={{color: "#F88379"}} value="Self-Esteem"><HeartPulse style={{color: "#F88379"}} /> Self-Esteem</SelectItem>
+          <SelectItem style={{color: "#FFD966"}} value="Motivation"><ShieldCheck style={{color: "#FFD966"}} /> Motivation</SelectItem>
+          <SelectItem style={{color: "#D9534F"}} value="Anger"><Angry style={{color: "#D9534F"}} /> Anger</SelectItem>
+          <SelectItem style={{color: "#B7C8B5"}} value="Mindfulness"><Brain style={{color: "#B7C8B5"}} /> Mindfulness</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

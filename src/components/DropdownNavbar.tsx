@@ -17,21 +17,21 @@ export function DropdownNavbar() {
             </DropdownMenuTrigger>
             {/* Navbar content */}
             <DropdownMenuContent className="w-56" align="start">
-                <DropdownMenuItem>
-                    <Link href={"/"}>
+                <Link href={"/home"}>
+                    <DropdownMenuItem>
                         Home
-                    </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                    <Link href={"/companions"}>
+                    </DropdownMenuItem>
+                </Link>
+                <Link href={"/companions"}>
+                    <DropdownMenuItem>
                         Companions
-                    </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                    <Link href={"/myprofile"}>
+                    </DropdownMenuItem>
+                </Link>
+                <Link href={"/myprofile"}>
+                    <DropdownMenuItem>
                         MyProfile
-                    </Link>
-                </DropdownMenuItem>
+                    </DropdownMenuItem>
+                </Link>
             </DropdownMenuContent>
         </DropdownMenu>
     )
