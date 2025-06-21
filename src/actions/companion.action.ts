@@ -126,3 +126,36 @@ export const createSessionHistory = async (calmCompanionId: string) => {
     console.error("ERROR creating session history: ", error);
   }
 };
+
+
+
+export const newCompanionPermissions = async() => {
+  const {userId, has} = await auth()
+
+  const hasBasicPlan = has({plan: "basic"})
+  const hasPlusPlan = has({plan: "plus"})
+  const hasProPlan = has({plan: "pro"})
+  
+  let limit = 0
+
+  try {
+    
+    if(hasProPlan) {
+      return true
+    } else if(hasBasicPlan) {
+      limit = 3
+    } else if(hasPlusPlan) {
+      limit = 10
+    }
+
+    const companionCount = await prisma.calmCompanion.count({
+      where: {
+        user_id: userId
+      }
+    })
+
+    return companionCount < limit
+  } catch (error) {
+    console.error("ERROR getting persmissions: ", error)
+  } 
+}

@@ -74,7 +74,7 @@ const CalmMindCompanion = ({ title, calmCompanions, userId }: CalmCompanionsProp
         }
     }
 
-    const itemPerPage = 2
+    const itemPerPage = 6
     const totalPage = Math.ceil(filteredCompanions.length / itemPerPage)
     const startIndex = (currentPage - 1) * itemPerPage
     const currentCompanions = filteredCompanions.slice(startIndex, startIndex + itemPerPage)
@@ -186,7 +186,7 @@ const CalmMindCompanion = ({ title, calmCompanions, userId }: CalmCompanionsProp
             </div>
             <Pagination className='w-full'>
                 <PaginationContent>
-                    <PaginationItem onClick={() => setCurrentPage(currentPage - 1)}>
+                    <PaginationItem onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}>
                         <PaginationPrevious href="#" />
                     </PaginationItem>
                     {
@@ -203,7 +203,7 @@ const CalmMindCompanion = ({ title, calmCompanions, userId }: CalmCompanionsProp
                         <PaginationEllipsis />
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationNext href="#" onClick={() => setCurrentPage(currentPage + 1)}/>
+                        <PaginationNext href="#" onClick={() => currentPage < totalPage && setCurrentPage(currentPage + 1)}/>
                     </PaginationItem>
                 </PaginationContent>
             </Pagination>
