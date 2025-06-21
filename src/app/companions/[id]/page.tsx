@@ -13,7 +13,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const user = await currentUser()
 
   if(!user) redirect("/sign-in")
-
+  if(!calmCompanion) redirect("/home")
 
   return (
     <div className="flex items-center justify-center">
