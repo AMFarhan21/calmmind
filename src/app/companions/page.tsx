@@ -14,7 +14,7 @@ const companions = async () => {
 
   // console.log(calmMindCompanion)
   const calmMindCompanion = await getCalmMindCompanionByUser(userId!)
-  if (calmMindCompanion?.length !== 0) {
+  if (calmMindCompanion?.length === 0) {
     return (
       <div className='p-4 flex flex-col justify-center mx-0 text-center items-center space-y-2 h-screen'>
         <h1 className='font-bold text-xl'>You don&apos;t have any companion yet!</h1>
