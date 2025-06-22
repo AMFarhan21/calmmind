@@ -67,6 +67,7 @@ http://localhost:3000
 ## 🤖 AI Support Explanation
 
 🧠 IBM Granite 3.3:8b
+
 During the development process, I used IBM Granite 3.3:8B to assist in debugging, solving programming errors, and refining prompt engineering for the AI behavior.
 It acted as my AI assistant to increase development speed and code reliability.
 
