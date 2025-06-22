@@ -43,7 +43,6 @@ Create .env
 > - [Clerk.dev](https://clerk.dev) for authentication
 > - [Supabase.com](https://supabase.com) for database
 > - [Vapi.ai](https://vapi.ai) for voice AI
-> - [OpenAI.com](https://platform.openai.com) for assistant ID & key (optional)
 
 ```bash
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
