@@ -15,15 +15,15 @@ CalmMind AI serves as a digital mental health companion. Whether you're managing
 - **Deployment:** Vercel
 
 ## 🌟 Features
-> 💬 Real-time AI voice conversations
-> 🎨 Theme switching (light/dark) with Fast transition
-> 🧠 Calm Cards (therapy-style exercises by category)
-> 🔒 Secure user authentication and subscription system
-> 🧠 Create & manage personalized Companion Cards
-> 🔈 Choose your preferred AI THERAPIST
-> 🗑️ delete Companion Cards anytime
-> 🧾 Live Transcript of Voice Conversations
-> 📋 Session History
+- 💬 Real-time AI voice conversations
+- 🎨 Theme switching (light/dark) with Fast transition
+- 🧠 Calm Cards (therapy-style exercises by category)
+- 🔒 Secure user authentication and subscription system
+- 🧠 Create & manage personalized Companion Cards
+- 🔈 Choose your preferred AI THERAPIST
+- 🗑️ delete Companion Cards anytime
+- 🧾 Live Transcript of Voice Conversations
+- 📋 Session History
 
 ## Getting Started
 
