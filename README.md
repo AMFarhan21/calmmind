@@ -66,14 +66,18 @@ http://localhost:3000
 
 ## 🤖 AI Support Explanation
 
-- IBM Granite 3.3:8b
--- During the development process, I used IBM Granite 3.3:8B to assist in debugging, solving programming errors, and refining prompt engineering for the AI behavior.
+🧠 IBM Granite 3.3:8b
+During the development process, I used IBM Granite 3.3:8B to assist in debugging, solving programming errors, and refining prompt engineering for the AI behavior.
 It acted as my AI assistant to increase development speed and code reliability.
 
-- VAPI
-CalmMind AI uses GPT-4 as a mental health companion — not a therapist — that responds with reflective, supportive tone based on the user's selected topic, category, and preferred style. Prompt engineering is carefully structured to avoid medical advice, while offering emotional guidance and journaling support.
+🗣️ Vapi – Voice AI Integration
+
+CalmMind AI integrates with Vapi to enable real-time voice conversations between users and the AI-based mental health companion.
+
+The voice experience is powered by custom prompt engineering designed to simulate an emotionally intelligent, calm, and supportive guide — allowing users to talk and receive reflective responses, similar to speaking with a mental health companion.
 
 Key prompt behaviors:
+```
 `You are a calm and supportive mental health companion helping the user reflect on their thoughts and emotions during a real-time voice session.
                     Mental Health Support Guidelines:
                     - Focus on the selected topic: {{ description }} and category: {{ category }} to guide the conversation gently.
@@ -86,3 +90,4 @@ Key prompt behaviors:
                     - Do not include special characters in your response - this is a voice conversation.
                     - If the user tries to shift the conversation away from the topic: {{ description }} ({{ category }}), or from core mental health areas such as Anxiety, Depression, Relationships, Productivity, Work & Burnout, Sleep, Self-Esteem, Motivation, Anger, or Mindfulness — gently steer the conversation back to the original topic.
                     `
+```
