@@ -42,7 +42,7 @@ Create .env
 > You'll need accounts on:
 > - [Clerk.dev](https://clerk.dev) for authentication
 > - [Supabase.com](https://supabase.com) for database
-> - [Vapi.ai](https://vapi.ai) for voice AI
+> - [Vapi.ai](https://vapi.ai) for voice AI and assistant ID
 
 ```bash
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
