@@ -1,4 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧘 CalmMind AI
+
+CalmMind AI is a mental health SaaS app that helps users reflect, explore their thoughts and emotions using AI-powered guidance — via both text and real-time voice conversation.
+
+## 📋 Description
+
+CalmMind AI serves as a digital mental health companion. Whether you're managing stress, anxiety, burnout, or just trying to reflect on your day, CalmMind provides AI voice-based conversations to help users process their emotions in a structured yet gentle way
+
+## ⚙️ Technologies Used
+
+- **Frontend:** Next.js, Tailwind CSS, TypeScript, Shadcn/UI  
+- **Backend:** Supabase (PostgreSQL), Prisma ORM  
+- **Authentication:** Clerk  
+- **AI:** Vapi (AI-powered voice conversations), IBM Granite 3.3:8B (AI support)  
+- **Deployment:** Vercel
+
+## 🌟 Features
+💬 Real-time AI voice conversations
+🎨 Theme switching (light/dark) with Fast transition
+🧠 Calm Cards (therapy-style exercises by category)
+🔒 Secure user authentication and subscription system
+🧠 Create & manage personalized Companion Cards
+🔈 Choose your preferred AI THERAPIST
+🗑️ delete Companion Cards anytime
+🧾 Live Transcript of Voice Conversations
+📋 Session History
 
 ## Getting Started
 
