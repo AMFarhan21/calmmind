@@ -12,7 +12,6 @@ const companions = async () => {
   console.log(userId)
   if (!user) redirect("/sign-in")
 
-  // console.log(calmMindCompanion)
   const calmMindCompanion = await getCalmMindCompanionByUser(userId!)
   if (calmMindCompanion?.length === 0) {
     return (
